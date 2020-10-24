@@ -1,4 +1,3 @@
-import java.util.Hashtable;
 import java.util.function.Function;
 import java.util.stream.IntStream;
 

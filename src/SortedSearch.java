@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class SortedSearch {
     private static int recurMidIndex(int start, int end, int lessThan, int[] sortedArray) {
         if (sortedArray.length == 0) {

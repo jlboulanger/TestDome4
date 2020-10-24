@@ -1,5 +1,3 @@
-import java.nio.CharBuffer;
-
 public class UserInput {
 
     public static class TextInput {
