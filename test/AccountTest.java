@@ -1,5 +1,11 @@
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 import static org.junit.Assert.*;
 
 public class AccountTest {
@@ -44,6 +50,24 @@ public class AccountTest {
         assertTrue(account.deposit(20d));
         assertTrue(account.withdraw(5d));
         assertEquals(15d, account.getBalance(), epsilon);
+    }
+
+    @Test
+    public void withCorrectAmount() {
+
+        List<String> slist = new ArrayList<>();
+        slist.add("3 were given to the Elves, immortal, wisest and fairest of all beings.");
+        slist.add("7, to the Dwarf lords, great miners and craftsmen of the mountain halls");
+        int res = slist.stream().map(s -> s.split("[!._,'@? ]")).flatMap(Arrays::stream)
+                .filter(s -> {
+                    try {
+                        Integer.valueOf(s);
+                        return true;
+                    } catch (NumberFormatException e) {
+                        return false;
+                    }
+                }).mapToInt(Integer::valueOf).sum();
+        System.out.println(res);
     }
 
     @Test

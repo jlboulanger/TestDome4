@@ -6,7 +6,7 @@ public class Ship {
 
     public Ship(int containerCount, Function<Integer, Integer> fillContainer) {
        // this.containers = new Hashtable<Integer, Integer>(containerCount);
-        containers = IntStream.range(0, containerCount).map(i -> fillContainer.apply(i)).toArray();
+        containers = IntStream.range(0, containerCount).map(fillContainer::apply).toArray();
 
         /*for (int i = 0; i < containerCount; i++) {
             this.containers.put(i, fillContainer.apply(i));
